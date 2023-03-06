@@ -13,3 +13,8 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
+
+// inquirer.prompt(questions)
+//     .then((answers) => writeToFile(answers.title+".md", answers))
+//     .then(() => console.log('Successfully wrote to readme'))
+//     .catch((err) => console.error(err));
