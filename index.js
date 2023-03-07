@@ -57,15 +57,20 @@ const appMenu = () => {
     },
     {
     type: 'input',
-    name: 'office number',
+    name: 'office_number',
     message: "what is their Office number",
         }
         ])
-        .then((answers) => teamMembers.append(answers))
+        .then((answers) => teamMembers.push(answers))
         .then(() => console.log(teamMembers))
         .catch((err) => console.error(err));
     }
+    function choiceMenu(){
+        console.log (" A)  Add an engineer B)  Add an intern, C) Finish building the team")
+    
+    }
     addManager()
+    choiceMenu()
 }
 appMenu()
 // inquirer.prompt(questions)
