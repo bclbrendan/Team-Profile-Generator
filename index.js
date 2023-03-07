@@ -67,7 +67,28 @@ const appMenu = () => {
     }
     function choiceMenu(){
         console.log (" A)  Add an engineer B)  Add an intern, C) Finish building the team")
-    
+        inquirer.prompt([
+            {
+                type: 'input',
+                name: 'nextTeamMember',
+                message: "who is the next team member",
+                choices: ["Engineer", 'intern', 'finish building team',]
+
+            }
+        ]
+        )
+        .then((answers) => {
+        if(answers.nextTeamMember === 'Engineer'){
+            addEngineer()
+    }else if(answers.nextTeamMember === 'intern'){
+        addIntern()
+    }else if(answers.nextTeamMember === 'finish building team'){
+        console.log("team done")
+        render()
+    }
+})
+        .then(() => console.log(teamMembers))
+        .catch((err) => console.error(err));
     }
     addManager()
     choiceMenu()
